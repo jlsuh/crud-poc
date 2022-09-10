@@ -6,6 +6,7 @@ import com.crud.pof.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -40,8 +41,8 @@ public class PersonService {
         return person;
     }
 
+    @Transactional // Attached/ManagedEntity: no need to explicitly save
     public Person editPerson(Long id, Person person) {
-        // Attached/ManagedEntity: no need to explicitly save
         Person personToEdit = this.getPerson(id);
         personToEdit.setFirstName(person.getFirstName());
         personToEdit.setLastName(person.getLastName());
