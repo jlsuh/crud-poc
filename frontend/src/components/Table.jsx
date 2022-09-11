@@ -14,8 +14,8 @@ export default function Table() {
 
   return (
     <Fragment>
-      <h2 className='text-center'>Personas</h2>
-      <button className='btn btn-primary'
+      <h1 className='text-center my-4'>Personas</h1>
+      <button className='btn btn-primary mb-3'
         onClick={() => {
           navigate('/persons/new')
         }}

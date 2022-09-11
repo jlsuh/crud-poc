@@ -40,42 +40,44 @@ export default function CreatePerson() {
 
   return (
     <Fragment>
-      <div className='container'>
+      <div className='container mt-5'>
         <div className='row'>
           <div className='card col-md-6 offset-md-3'>
-            <h2 className='text-center'>Crear Persona</h2>
+            <h2 className='text-center mt-4'>Crear Persona</h2>
             <div className='card-body'>
               <form>
                 <div className='form-group'>
                   <label>Nombre:</label>
-                  <input placeholder='Nombre' name='firstName' className='form-control' type='text'
+                  <input placeholder='Nombre' name='firstName' className='form-control mb-4' type='text'
                     value={firstName}
                     onChange={e => setFirstName(e.target.value)}
                   />
                   <label>Apellido:</label>
-                  <input placeholder='Apellido' name='lastName' className='form-control' type='text'
+                  <input placeholder='Apellido' name='lastName' className='form-control mb-4' type='text'
                     value={lastName}
                     onChange={e => setLastName(e.target.value)}
                   />
                   <label>Edad:</label>
-                  <input placeholder='Edad' name='age' className='form-control'
+                  <input placeholder='Edad' name='age' className='form-control mb-4'
                     value={age}
                     onChange={e => setMaxAge(e.target.value)}
                     onKeyPress={e => verifyIsDigit(e)}
                   />
                 </div>
-                <button className='btn btn-success'
-                  onClick={e => createPerson(e)}
-                >
-                  Crear
-                </button>
-                <button className='btn btn-danger' type='button'
-                  onClick={() => {
-                    navigate('/persons')
-                  }}
-                >
-                  Cancelar
-                </button>
+                <div className='float-end'>
+                  <button className='btn btn-success'
+                    onClick={e => createPerson(e)}
+                  >
+                    Crear
+                  </button>
+                  <button className='btn btn-danger mx-2' type='button'
+                    onClick={() => {
+                      navigate('/persons')
+                    }}
+                  >
+                    Cancelar
+                  </button>
+                </div>
               </form>
             </div>
           </div>
