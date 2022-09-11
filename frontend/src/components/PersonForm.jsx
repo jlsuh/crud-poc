@@ -49,18 +49,18 @@ export default function PersonForm(props) {
             <div className='card-body'>
               <form>
                 <div className='form-group'>
-                  <label>Nombre:</label>
-                  <input placeholder='Nombre' name='firstName' className='form-control mb-4' type='text'
+                  <label htmlFor='first_name'>Nombre:</label>
+                  <input className='form-control mb-4' type='text' name='firstName' id='first_name' placeholder='Nombre'
                     value={firstName}
                     onChange={e => setFirstName(e.target.value)}
                   />
-                  <label>Apellido:</label>
-                  <input placeholder='Apellido' name='lastName' className='form-control mb-4' type='text'
+                  <label htmlFor='last_name'>Apellido:</label>
+                  <input className='form-control mb-4' type='text' name='lastName' id='last_name' placeholder='Apellido'
                     value={lastName}
                     onChange={e => setLastName(e.target.value)}
                   />
-                  <label>Edad:</label>
-                  <input placeholder='Edad' name='age' className='form-control mb-4'
+                  <label htmlFor='age'>Edad:</label>
+                  <input className='form-control mb-4' name='age' id='age' placeholder='Edad'
                     value={age}
                     onChange={e => setMaxAge(e.target.value)}
                     onKeyPress={e => verifyIsDigit(e)}
