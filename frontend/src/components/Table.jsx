@@ -15,15 +15,13 @@ export default function Table() {
   return (
     <Fragment>
       <h2 className='text-center'>Personas</h2>
-      <div className='row'>
-        <button className='btn btn-primary'
-          onClick={() => {
-            navigate('/persons/new')
-          }}
-        >
-          Crear Persona
-        </button>
-      </div>
+      <button className='btn btn-primary'
+        onClick={() => {
+          navigate('/persons/new')
+        }}
+      >
+        Crear Persona
+      </button>
       <div className='row'>
         <table className='table table-striped table-bordered'>
           <thead>
