@@ -12,8 +12,8 @@ function App() {
         <Bar />
         <div className='container'>
           <Routes>
-            <Route exact path='/' element={<Table />} />
-            <Route exact path='/persons' element={<Table />} />
+            <Route path='/' element={<Table />} />
+            <Route path='/persons' element={<Table />} />
             <Route path='/persons/new' element={<CreatePerson />} />
           </Routes>
         </div>
