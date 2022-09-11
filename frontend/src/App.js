@@ -1,14 +1,12 @@
 import './App.css';
-import ListPersonComponent from './components/ListPersonComponent';
-import HeaderComponent from './components/HeaderComponent';
-import FooterComponent from './components/FooterComponent';
+import Bar from './components/Bar';
+import FooterComponent from './components/Footer';
 
 function App() {
   return (
     <div>
-      <HeaderComponent />
+      <Bar />
       <div className='container'>
-        <ListPersonComponent />
       </div>
       <FooterComponent />
     </div>
