@@ -1,5 +1,5 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import PersonAPI from '../api/PersonAPI'
+import { Fragment, useState, useEffect } from 'react'
+import * as PersonAPI from '../api/PersonAPI'
 
 export default function Table() {
   const [persons, setPersons] = useState([])
