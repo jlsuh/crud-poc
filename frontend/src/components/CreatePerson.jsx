@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import * as PersonAPI from '../api/PersonAPI';
 
 export default function CreatePerson() {
   const [firstName, setFirstName] = useState('')
@@ -29,9 +30,12 @@ export default function CreatePerson() {
     let person = {
       firstName,
       lastName,
-      ageAsNumber
+      age: ageAsNumber
     }
-    console.log("Person" + JSON.stringify(person))
+    console.log(JSON.stringify(person, null, 1))
+    PersonAPI.createPerson(person).then(() => {
+      navigate('/persons')
+    })
   }
 
   return (

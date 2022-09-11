@@ -6,8 +6,13 @@ export function getPersons() {
   return axios.get(baseURL);
 }
 
+export function createPerson(person) {
+  return axios.post(baseURL, person);
+}
+
 const PersonAPI = {
-  getPersons
+  getPersons,
+  createPerson
 }
 
 export default PersonAPI
