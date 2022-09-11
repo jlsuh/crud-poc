@@ -1,8 +1,10 @@
 import { Fragment, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import * as PersonAPI from '../api/PersonAPI'
 
 export default function Table() {
   const [persons, setPersons] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     PersonAPI.getPersons().then((res) => {
@@ -13,6 +15,15 @@ export default function Table() {
   return (
     <Fragment>
       <h2 className='text-center'>Personas</h2>
+      <div className='row'>
+        <button className='btn btn-primary'
+          onClick={() => {
+            navigate('/persons/create')
+          }}
+        >
+          Crear Persona
+        </button>
+      </div>
       <div className='row'>
         <table className='table table-striped table-bordered'>
           <thead>
