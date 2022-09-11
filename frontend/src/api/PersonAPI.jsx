@@ -10,9 +10,14 @@ export function createPerson(person) {
   return axios.post(baseURL, person);
 }
 
+export function updatePerson(person) {
+  return axios.put(`${baseURL}/${person.id}`, person);
+}
+
 const PersonAPI = {
   getPersons,
-  createPerson
+  createPerson,
+  updatePerson
 }
 
 export default PersonAPI
