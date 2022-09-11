@@ -12,6 +12,10 @@ export default function Table() {
     }, [])
   }, [])
 
+  function editPerson(personId) {
+    navigate(`/persons/edit/${personId}`)
+  }
+
   return (
     <Fragment>
       <h1 className='text-center my-4'>Personas</h1>
@@ -38,7 +42,13 @@ export default function Table() {
                 <td>{person.firstName}</td>
                 <td>{person.lastName}</td>
                 <td>{person.age}</td>
-                <td>Acción</td>
+                <td>
+                  <button className='btn btn-info'
+                    onClick={() => editPerson(person.id)}
+                  >
+                    Editar
+                  </button>
+                </td>
               </tr>
             )}
           </tbody>
