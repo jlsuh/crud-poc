@@ -18,7 +18,7 @@ export default function Table() {
       <div className='row'>
         <button className='btn btn-primary'
           onClick={() => {
-            navigate('/persons/create')
+            navigate('/persons/new')
           }}
         >
           Crear Persona

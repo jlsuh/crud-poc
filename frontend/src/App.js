@@ -14,7 +14,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Table />} />
             <Route exact path='/persons' element={<Table />} />
-            <Route path='/persons/create' element={<CreatePerson />} />
+            <Route path='/persons/new' element={<CreatePerson />} />
           </Routes>
         </div>
         <FooterComponent />
