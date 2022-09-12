@@ -60,14 +60,14 @@ export default function PersonForm(props) {
                     onChange={e => setLastName(e.target.value)}
                   />
                   <label htmlFor='age'>Edad:</label>
-                  <input className='form-control mb-4' name='age' id='age' placeholder='Edad'
+                  <input className='form-control mb-4' type='number' name='age' id='age' placeholder='Edad'
                     value={age}
                     onChange={e => setMaxAge(e.target.value)}
                     onKeyPress={e => verifyIsDigit(e)}
                   />
                 </div>
                 <div className='float-end'>
-                  <button className='btn btn-success'
+                  <button className='btn btn-success' type='submit'
                     onClick={e => onConfirm(e)}
                   >
                     Aceptar

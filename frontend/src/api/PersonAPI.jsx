@@ -14,6 +14,10 @@ export function updatePerson(person) {
   return axios.put(`${baseURL}/${person.id}`, person);
 }
 
+export function deletePerson(personId) {
+  axios.delete(`${baseURL}/${personId}`);
+}
+
 const PersonAPI = {
   getPersons,
   createPerson,

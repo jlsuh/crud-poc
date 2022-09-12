@@ -16,6 +16,11 @@ export default function Table() {
     navigate(`/persons/edit/${personId}`)
   }
 
+  function deletePerson(personId) {
+    PersonAPI.deletePerson(personId)
+    setPersons(persons.filter((person) => person.id !== personId))
+  }
+
   return (
     <Fragment>
       <h1 className='text-center my-4'>Personas</h1>
@@ -47,6 +52,11 @@ export default function Table() {
                     onClick={() => editPerson(person.id)}
                   >
                     Editar
+                  </button>
+                  <button className='btn btn-danger'
+                    onClick={() => deletePerson(person.id)}
+                  >
+                    Eliminar
                   </button>
                 </td>
               </tr>
