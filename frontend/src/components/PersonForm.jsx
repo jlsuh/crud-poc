@@ -5,6 +5,7 @@ export default function PersonForm(props) {
   const navigate = useNavigate()
   const MAX_AGE = 127
   const MIN_AGE = 1
+  const MAX_LENGTH = 100
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [age, setAge] = useState('')
@@ -56,8 +57,8 @@ export default function PersonForm(props) {
     const ageAsNumber = +age
     const person = {
       id: idAsNumber,
-      firstName,
-      lastName,
+      firstName: firstName.substring(0, MAX_LENGTH),
+      lastName: lastName.substring(0, MAX_LENGTH),
       age: ageAsNumber
     }
     console.log(JSON.stringify(person, null, 1))
