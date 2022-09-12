@@ -2,13 +2,15 @@ import { Fragment, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function PersonForm(props) {
+  const navigate = useNavigate()
+  const MAX_AGE = 127
+  const MIN_AGE = 1
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [age, setAge] = useState('')
-  const navigate = useNavigate()
+  const { id } = useParams()
   const formTitle = props.formTitle
   const onConfirmContinuation = props.onConfirmContinuation
-  const { id } = useParams()
 
   function verifyIsDigit(e) {
     if (!/[0-9]/.test(e.key)) {
@@ -17,17 +19,39 @@ export default function PersonForm(props) {
   }
 
   function setMaxAge(age) {
-    if (age > 127) {
-      setAge(127)
-    } else if (age < 1) {
+    if (age > MAX_AGE) {
+      setAge(MAX_AGE)
+    } else if (age < MIN_AGE) {
       setAge('')
     } else {
       setAge(age)
     }
   }
 
+  function isEmptyField(str, emptyMsgStr, index) {
+    const emptyFieldMessages = Array.from(document.getElementsByClassName("empty-field-message"))
+    let isEmptyField = false
+    if (str === '') {
+      emptyFieldMessages[index].innerHTML = '*Ingresar ' + emptyMsgStr
+      isEmptyField = true
+    } else {
+      emptyFieldMessages[index].innerHTML = ''
+    }
+    return isEmptyField
+  }
+
+  function validateNonEmptyFields() {
+    let isEmptyFirstName = isEmptyField(firstName, 'nombre', 0)
+    let isEmptyLastName = isEmptyField(lastName, 'apellido', 1)
+    let isEmptyAge = isEmptyField(age, 'age', 2)
+    return isEmptyFirstName || isEmptyLastName || isEmptyAge
+  }
+
   function onConfirm(e) {
     e.preventDefault()
+    if (validateNonEmptyFields()) {
+      return
+    }
     const idAsNumber = +id
     const ageAsNumber = +age
     const person = {
@@ -50,24 +74,27 @@ export default function PersonForm(props) {
               <form>
                 <div className='form-group'>
                   <label htmlFor='firstName'>Nombre:</label>
-                  <input className='form-control mb-4' type='text' name='firstName' id='firstName' placeholder='Nombre' required
+                  <input className='form-control' type='text' name='firstName' id='firstName' placeholder='Nombre'
                     value={firstName}
                     onChange={e => setFirstName(e.target.value)}
                   />
+                  <div className='empty-field-message'></div>
                   <label htmlFor='lastName'>Apellido:</label>
-                  <input className='form-control mb-4' type='text' name='lastName' id='lastName' placeholder='Apellido' required
+                  <input className='form-control' type='text' name='lastName' id='lastName' placeholder='Apellido'
                     value={lastName}
                     onChange={e => setLastName(e.target.value)}
                   />
+                  <div className='empty-field-message'></div>
                   <label htmlFor='age'>Edad:</label>
-                  <input className='form-control mb-4' type='number' name='age' id='age' placeholder='Edad' required
+                  <input className='form-control' type='number' name='age' id='age' placeholder='Edad'
                     value={age}
                     onChange={e => setMaxAge(e.target.value)}
                     onKeyPress={e => verifyIsDigit(e)}
                   />
+                  <div className='empty-field-message'></div>
                 </div>
                 <div className='float-end'>
-                  <button className='btn btn-success' type='submit'
+                  <button className='btn btn-success'
                     onClick={e => onConfirm(e)}
                   >
                     Aceptar

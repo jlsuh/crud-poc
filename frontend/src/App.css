@@ -30,3 +30,9 @@ body {
 .navbar-brand {
   margin-left: 1.5vw;
 }
+
+.empty-field-message {
+  min-height: 25px;
+  color: red;
+  margin-left: 5px;
+}

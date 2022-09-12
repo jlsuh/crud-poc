@@ -24,13 +24,15 @@ export default function Table() {
   return (
     <Fragment>
       <h1 className='text-center my-4'>Personas</h1>
-      <button className='btn btn-primary mb-3'
-        onClick={() => {
-          navigate('/persons/new')
-        }}
-      >
-        Crear Persona
-      </button>
+      <div className='d-flex flex-row justify-content-between'>
+        <button className='btn btn-primary mb-3'
+          onClick={() => {
+            navigate('/persons/new')
+          }}
+        >
+          Crear Persona
+        </button>
+      </div>
       <div className='row'>
         <table className='table table-striped table-bordered'>
           <thead>
