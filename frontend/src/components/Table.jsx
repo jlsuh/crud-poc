@@ -48,12 +48,12 @@ export default function Table() {
                 <td>{person.lastName}</td>
                 <td>{person.age}</td>
                 <td>
-                  <button className='btn btn-info'
+                  <button className='btn btn-info mx-1'
                     onClick={() => editPerson(person.id)}
                   >
                     Editar
                   </button>
-                  <button className='btn btn-danger'
+                  <button className='btn btn-danger mx-2'
                     onClick={() => deletePerson(person.id)}
                   >
                     Eliminar
