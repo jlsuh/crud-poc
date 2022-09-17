@@ -1,6 +1,6 @@
-package com.crud.pof.repository;
+package com.crud.poc.repository;
 
-import com.crud.pof.model.Person;
+import com.crud.poc.model.Person;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

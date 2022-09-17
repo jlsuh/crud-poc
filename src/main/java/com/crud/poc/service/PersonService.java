@@ -1,8 +1,8 @@
-package com.crud.pof.service;
+package com.crud.poc.service;
 
-import com.crud.pof.model.exception.PersonNotFoundException;
-import com.crud.pof.model.Person;
-import com.crud.pof.repository.PersonRepository;
+import com.crud.poc.model.exception.PersonNotFoundException;
+import com.crud.poc.model.Person;
+import com.crud.poc.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

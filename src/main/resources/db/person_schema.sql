@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS crud_pof;
+CREATE DATABASE IF NOT EXISTS crud_poc;
 
-USE crud_pof;
+USE crud_poc;
 
 DROP TABLE IF EXISTS person;
 

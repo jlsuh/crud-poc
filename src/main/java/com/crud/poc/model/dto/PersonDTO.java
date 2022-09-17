@@ -1,6 +1,6 @@
-package com.crud.pof.model.dto;
+package com.crud.poc.model.dto;
 
-import com.crud.pof.model.Person;
+import com.crud.poc.model.Person;
 
 public class PersonDTO {
     private Long id;

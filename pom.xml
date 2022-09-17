@@ -10,10 +10,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.crud</groupId>
-    <artifactId>pof</artifactId>
+    <artifactId>poc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>crud-pof</name>
-    <description>crud-pof</description>
+    <name>crud-poc</name>
+    <description>crud-poc</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>

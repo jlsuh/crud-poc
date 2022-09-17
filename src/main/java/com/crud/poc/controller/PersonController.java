@@ -1,8 +1,8 @@
-package com.crud.pof.controller;
+package com.crud.poc.controller;
 
-import com.crud.pof.model.Person;
-import com.crud.pof.model.dto.PersonDTO;
-import com.crud.pof.service.PersonService;
+import com.crud.poc.model.Person;
+import com.crud.poc.model.dto.PersonDTO;
+import com.crud.poc.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

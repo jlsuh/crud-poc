@@ -1,6 +1,6 @@
-package com.crud.pof.model;
+package com.crud.poc.model;
 
-import com.crud.pof.model.dto.PersonDTO;
+import com.crud.poc.model.dto.PersonDTO;
 
 import javax.persistence.*;
 

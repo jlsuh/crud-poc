@@ -1,4 +1,4 @@
-package com.crud.pof.model.exception;
+package com.crud.poc.model.exception;
 
 import java.text.MessageFormat;
 
