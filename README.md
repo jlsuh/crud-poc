@@ -1,11 +1,11 @@
 # Probar el CRUD
 ## Crear tabla person
-1. Copiar y pegar [tabla person](https://github.com/jlsuh/crud-pof/blob/main/src/main/resources/db/person_schema.sql) en MySQL Shell
-2. Opcional: Insertar [datos iniciales](https://github.com/jlsuh/crud-pof/blob/main/src/main/resources/db/person_data.sql)
+1. Copiar y pegar [tabla person](https://github.com/jlsuh/crud-poc/blob/main/src/main/resources/db/person_schema.sql) en MySQL Shell
+2. Opcional: Insertar [datos iniciales](https://github.com/jlsuh/crud-poc/blob/main/src/main/resources/db/person_data.sql)
 
 ## Ejecutar Spring Boot
 ```bash
-# en /crud-pof
+# en /crud-poc
 $ mvn install && mvn spring-boot:run
 ```
 
@@ -157,8 +157,8 @@ Empleado para guardar todas las transacciones en la DB.
 Empleado para deshacer transacciones que no todavía no han sido almacenados en la DB.
 
 ```sql
-CREATE DATABASE IF NOT EXISTS crud_pof;
-USE crud_pof;
+CREATE DATABASE IF NOT EXISTS crud_poc;
+USE crud_poc;
 DROP TABLE IF EXISTS person;
 CREATE TABLE person (
     id         BIGINT       NOT NULL AUTO_INCREMENT,
